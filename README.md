@@ -101,3 +101,10 @@ sudo nvme smart-log /dev/nvme5n1
 ```
 sudo lshw -short -C memory
 ```
+
+### for harvestor first do chia init followed by chia init -c copied-ca-folder-from-full-node
+
+
+### references
+https://github.com/Chia-Network/chia-blockchain/wiki/Farming-on-many-machines
+
