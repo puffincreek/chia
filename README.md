@@ -22,7 +22,7 @@ sudo xfs_admin -L "F06" /dev/sd
 sudo mkfs.ext4 /dev/sdq
 ```
 
-ext label
+#### ext label
 ```
 sudo e2label /dev/sdq F06
 ```
@@ -31,11 +31,7 @@ sudo e2label /dev/sdq F06
 ```
 sudo umount /dev/sdy
 ```
-#### for unmounting disk /dev/sdy
-```
-sudo umount /dev/sdy
-```
-
+#### for mounting disk /dev/sdy
 #### mountpoint is a directory under root (/), mount the filesystem on device /dev/sdy in there.
 ```
 sudo mount /dev/sdy /mountpoint
