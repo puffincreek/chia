@@ -108,3 +108,8 @@ sudo lshw -short -C memory
 ### references
 https://github.com/Chia-Network/chia-blockchain/wiki/Farming-on-many-machines
 
+### glances - for system stats
+```
+apt install -y glances
+glances
+```
