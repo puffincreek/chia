@@ -57,7 +57,7 @@ next time system is rebooted, the auto mount would happen at `/media/john/F00`
 #### dont forget to provide write permissions once booted (one time setup after each disk is installed)
 777 or 666
 ```
-sudo chmod -R 777 /media/${user}
+sudo chmod -R 777 /media/${USER}
 ```
 
 ### Activate py environment
