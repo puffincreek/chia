@@ -116,3 +116,16 @@ glances
 
 ### For partition and formatting each partition
 [Partion a drive and format](https://techguides.yt/guides/how-to-partition-format-and-auto-mount-disk-on-ubuntu-20-04/)
+
+### log stats for average time taken
+```
+total=`grep -E 'Total time' *.log | cut -d ' ' -f4 | sort | paste -sd+ | bc`
+count=`grep -E 'Total time' *.log | wc -l`
+average=`echo "scale=2;${total}/(3600 * ${count})" | bc`
+cat << EOF
+########################################################
+total ${count} runs on this run
+average time taken to complete a plot: ${average} hours
+########################################################
+EOF
+```
