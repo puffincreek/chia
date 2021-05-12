@@ -129,3 +129,16 @@ average time taken to complete a plot: ${average} hours
 ########################################################
 EOF
 ```
+
+### increase swap space by adding an additional swap file
+```
+sudo fallocate -l 16G /swapfile
+ls -lh /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw,pri=10 0 0' | sudo tee -a /etc/fstab
+sudo findmnt --verify --verbose
+sudo swapon --show
+sudo free -h
+```
