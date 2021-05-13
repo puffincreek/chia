@@ -142,3 +142,10 @@ sudo findmnt --verify --verbose
 sudo swapon --show
 sudo free -h
 ```
+
+### Time for phase 1
+```
+total=`grep -E 'Time for phase 1' *.log | cut -d '=' -f2 | cut -f2 -d ' ' | paste -sd+ | bc`
+count=`grep -E 'Time for phase 1' *.log  | wc -l`
+average=`echo "scale=2;${total}/(3600 * ${count})" | bc`
+```
