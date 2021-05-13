@@ -143,10 +143,19 @@ sudo swapon --show
 sudo free -h
 ```
 
-### Time for phase 1
+### Time for phases
 ```
-total=`grep -E 'Time for phase 1' *.log | cut -d '=' -f2 | cut -f2 -d ' ' | paste -sd+ | bc`
-count=`grep -E 'Time for phase 1' *.log  | wc -l`
-average=`echo "scale=2;${total}/(3600 * ${count})" | bc`
-echo "time for Phase-I - ${average} hours"
+for i in 1 2 3 4
+do
+total=`grep -E "Time for phase ${i}" *.log | cut -d '=' -f2 | cut -f2 -d ' ' | paste -sd+ | bc`
+if [[ ${total} = *[!\ ]* ]]; then
+    count=`grep -E "Time for phase ${i}" *.log  | wc -l`
+    if [[ ${count} = 0 ]]; then 
+        continue 
+    else
+        average=`echo "scale=2;${total}/(3600 * ${count})" | bc`
+        echo "Time for phase ${i} ========> ${average} hours"
+    fi
+fi
+done
 ```
