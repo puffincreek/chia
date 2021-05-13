@@ -124,7 +124,7 @@ count=`grep -E 'Total time' *.log | wc -l`
 average=`echo "scale=2;${total}/(3600 * ${count})" | bc`
 cat << EOF
 ########################################################
-total ${count} runs on this run
+total ${count} plots on this run
 average time taken to complete a plot: ${average} hours
 ########################################################
 EOF
