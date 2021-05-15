@@ -164,8 +164,9 @@ done
 ### LVM
 sudo apt install lvm2
 
-#### VG Create and Extend
+#### VG Create 
 sudo vgcreate vg0 /dev/nvme0n1
+#### VG Extend 
 sudo vgextend vg0 /dev/nvme1n1
 
 #### LV creation
