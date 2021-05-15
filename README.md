@@ -159,3 +159,23 @@ if [[ ${total} = *[!\ ]* ]]; then
 fi
 done
 ```
+
+
+### LVM
+sudo apt install lvm2
+
+#### VG Create and Extend
+sudo vgcreate vg0 /dev/nvme0n1
+sudo vgextend vg0 /dev/nvme1n1
+
+#### LV creation
+sudo lvcreate --type striped -L 370G -n lv0 vg0
+sudo lvcreate --type striped -L 370G -n lv1 vg0
+
+LV Formats
+sudo mkfs.ext4 /dev/vg0/lv0
+sudo mkfs.ext4 /dev/vg0/lv1
+
+LV Label
+sudo e2label /dev/vg0/lv0 F0
+sudo e2label /dev/vg0/lv1 F1
