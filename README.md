@@ -188,3 +188,7 @@ sudo mkfs.ext4 /dev/vg0/lv1
 sudo e2label /dev/vg0/lv0 F0
 sudo e2label /dev/vg0/lv1 F1
 ```
+##### Note on mounting logical volumes
+Once you create the LVs, for adding fstab entries, look for new UUIDs for each logical volumes in `sudo blkid` results.
+Look for entries like `/dev/mapper/vg0-lv0`
+
