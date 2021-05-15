@@ -172,10 +172,10 @@ sudo vgextend vg0 /dev/nvme1n1
 sudo lvcreate --type striped -L 370G -n lv0 vg0
 sudo lvcreate --type striped -L 370G -n lv1 vg0
 
-LV Formats
+#### LV Formats
 sudo mkfs.ext4 /dev/vg0/lv0
 sudo mkfs.ext4 /dev/vg0/lv1
 
-LV Label
+##### LV Label
 sudo e2label /dev/vg0/lv0 F0
 sudo e2label /dev/vg0/lv1 F1
