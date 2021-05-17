@@ -48,10 +48,6 @@ an example for disk labelled `F00` having an `ext4` filesystem for a user john:
 UUID=7b7d38e1-f1d4-4020-9f0d-ed55e277f052    /media/john/F00    ext4    defaults,noatime,nodiratime    0    0
 ```
 
-then
-```
-mkdir -p /media/${USER}/F00
-```
 next time system is rebooted, the auto mount would happen at `/media/john/F00`
 
 #### dont forget to provide write permissions once booted (one time setup after each disk is installed)
