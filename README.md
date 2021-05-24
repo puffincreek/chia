@@ -188,3 +188,13 @@ sudo e2label /dev/vg0/lv1 F1
 Once you create the LVs, for adding fstab entries, look for new UUIDs for each logical volumes in `sudo blkid` results.
 Look for entries like `/dev/mapper/vg0-lv0`
 
+#### Stopping key base
+```
+keybase ctl stop
+```
+
+#### Kill all plots together
+```
+kill $(ps aux | grep 'plot' |grep -v 'auto' | awk '{print $2}')
+```
+
