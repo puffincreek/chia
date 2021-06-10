@@ -198,3 +198,7 @@ keybase ctl stop
 kill $(ps aux | grep 'plot' |grep -v 'auto' | awk '{print $2}')
 ```
 
+#### Distribution of eligible plots
+```
+cat  ~/.chia/mainnet/log/debug.log | grep eligible| tr -s ' ' ' ' | cut -f 5 -d ' ' | sort | uniq -ic | sort -k 2 -n
+```
