@@ -205,4 +205,5 @@ cat  ~/.chia/mainnet/log/*.log* | grep eligible| tr -s ' ' ' ' | cut -f 5 -d ' '
 #### To check if you are missing sign attempts since disks slept off
 ```
 grep 'Looking up qualities on'  ~/.chia/mainnet/log/debug.log*
+grep 'Looking up qualities on'  ~/.chia/mainnet/log/debug.log* | cut -d ':' -f 2 | cut -d 'T' -f 1 | uniq -ic | sort -k 2 | awk '{ print $2 " " $1}'
 ```
