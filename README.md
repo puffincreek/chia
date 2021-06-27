@@ -209,4 +209,6 @@ grep 'Looking up qualities on'  ~/.chia/mainnet/log/debug.log* | cut -d ':' -f 2
 ```
 
 #### check for a win
+```
 grep 'Found 1'   ~/.chia/mainnet/log/debug*
+```
