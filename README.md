@@ -207,3 +207,6 @@ cat  ~/.chia/mainnet/log/*.log* | grep eligible| tr -s ' ' ' ' | cut -f 5 -d ' '
 grep 'Looking up qualities on'  ~/.chia/mainnet/log/debug.log*
 grep 'Looking up qualities on'  ~/.chia/mainnet/log/debug.log* | cut -d ':' -f 2 | cut -d 'T' -f 1 | uniq -ic | sort -k 2 | awk '{ print $2 " " $1}'
 ```
+
+#### check for a win
+grep 'Found 1'   ~/.chia/mainnet/log/debug*
