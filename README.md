@@ -217,15 +217,17 @@ grep 'Found 1'   ~/.chia/mainnet/log/debug*
 ```
 while true
 do
-    sleep 1m
+    touch ~/wifi.log
+    sleep 30s
     status=`nmcli general status |grep enabled|cut -f 1 -d ' '`
     if [ ${status} = "connected" ]; then
-        echo "wifi is available"
+        echo "wifi is available, no corrective action taken"
         continue
     fi
-    echo "wifi down, resetting"
+    echo `date` "wifi down, resetting" | tee -a ~/wifi.log
     nmcli radio wifi off
     nmcli radio wifi on
-    echo "reset done"
+    echo `date` "reset done" | tee -a ~/wifi.log
+    sleep 60s
 done
 ```
