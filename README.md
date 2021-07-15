@@ -212,3 +212,20 @@ grep 'Looking up qualities on'  ~/.chia/mainnet/log/debug.log* | cut -d ':' -f 2
 ```
 grep 'Found 1'   ~/.chia/mainnet/log/debug*
 ```
+
+#### Reset wifi when broken
+```
+while true
+do
+    sleep 1m
+    status=`nmcli general status |grep enabled|cut -f 1 -d ' '`
+    if [ ${status} = "connected" ]; then
+        echo "wifi is available"
+        continue
+    fi
+    echo "wifi down, resetting"
+    nmcli radio wifi off
+    nmcli radio wifi on
+    echo "reset done"
+done
+```
