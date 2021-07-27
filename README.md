@@ -219,9 +219,9 @@ while true
 do
     touch ~/wifi.log
     sleep 30s
-    status=`nmcli general status |grep enabled|cut -f 1 -d ' '`
-    if [ ${status} = "connected" ]; then
-        echo "wifi is available, no corrective action taken"
+    nc -zv google.com 443
+    if [ $? = 0 ]; then
+        echo `date` "wifi is available, no corrective action taken"
         continue
     fi
     echo `date` "wifi down, resetting" | tee -a ~/wifi.log
@@ -230,4 +230,5 @@ do
     echo `date` "reset done" | tee -a ~/wifi.log
     sleep 60s
 done
+;
 ```
