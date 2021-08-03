@@ -232,3 +232,7 @@ do
 done
 ;
 ```
+
+#### Useful answer on chia plots check
+https://chiaforum.com/t/anyone-run-the-chia-plots-check-command/375/10
+
