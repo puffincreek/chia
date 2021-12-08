@@ -236,3 +236,5 @@ done
 #### Useful answer on chia plots check
 https://chiaforum.com/t/anyone-run-the-chia-plots-check-command/375/10
 
+#### find all disks that contribute to plots on farm
+`grep 'Found plot'  ~/.chia/mainnet/log/debug.log | cut -d' ' -f14 | cut -d'/' -f4 | sort | uniq`
